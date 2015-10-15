@@ -15,7 +15,7 @@ Copyright: 2011 Kouhei Sutou <kou@clear-code.com>
 	   orangain <orangain@gmail.com>
 License: LGPL-2.1
 
-Files: data/html/admin/css/redmond/* examples/dictionary/html/css/smoothness/jquery-ui-1.8.12.custom.css data/html/admin/css/redmond/jquery-ui-1.8.18.custom.css
+Files: data/html/admin/css/redmond/* examples/dictionary/html/css/smoothness/jquery-ui-1.8.12.custom.css data/html/admin/css/redmond/jquery-ui-1.8.18.custom.css data/html/admin/js/jquery-ui-1.8.18.custom.js
 Copyright: 2011, Brandon Aaron
 	   Paul Bakaus (paulbakaus.com)
 	   David Bolter
@@ -46,7 +46,7 @@ Files: data/html/admin/js/jquery.flot*
 Copyright: 2007-2009 IOLA and Ole Laursen
 License: MIT
 
-Files: data/html/admin/js/jquery-1.7.2.min.js
+Files: data/html/admin/js/jquery-1.7.2.js
 Copyright: 2011, John Resig
 License: MIT or GPL-2
 
@@ -73,6 +73,36 @@ License: BSD-2-clause
 Files: doc/locale/*/basic.css doc/locale/*/pygments.css
 Copyright: 2007-2014 the Sphinx team
 License: BSD-2-clause
+
+Files: vendor/onigmo-source/*
+Copyright: 2002-2009 K.Kosako <sndgk393@ybb.ne.jp>
+	   2011-2014 K.Takata <kentkt@csc.jp>
+License: BSD-2-clause
+
+Files: vendor/nginx-*/*
+Copyright: 2002-2014 Igor Sysoev
+           2011-2014 Nginx, Inc.
+License: BSD-2-clause
+
+Files: vendor/mruby-source/*
+Copyright: 2014 mruby devevlopers
+License: MIT
+
+Files: vendor/mruby/mruby-compiler/core/parse.c
+Copyright: 1984, 1989-1990, 2000-2013 Free Software Foundation, Inc.
+License: GPL-3+-WITH-BISON-EXCEPTION
+
+Files: vendor/mruby/mruby-onig-regexp/src/mruby_onig_regexp.c
+Copyright: 2014 mattn <mattn.jp@gmail.com>
+License: MIT
+
+Files: vendor/mruby/mruby-io/*
+Copyright: 2013 Internet Initiative Japan Inc.
+License: MIT
+
+Files: vendor/mruby/*
+Copyright: 2013-2014 Kouhei Sutou <kou@clear-code.com>
+License: LGPL-2.1
 
 License: BSD-2-clause
  Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
@@ -139,3 +169,34 @@ License: GPL-2
  .
  On Debian systems, the complete text of the GNU General Public
  License Version 2 can be found in `/usr/share/common-licenses/GPL-2'.
+
+License: GPL-3+-WITH-BISON-EXCEPTION
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ .
+ As a special exception, you may create a larger work that contains
+ part or all of the Bison parser skeleton and distribute that work
+ under terms of your choice, so long as that work isn't itself a
+ parser generator using the skeleton or a modified version thereof
+ as a parser skeleton.  Alternatively, if you modify or redistribute
+ the parser skeleton itself, you may (at your option) remove this
+ special exception, which will cause the skeleton and the resulting
+ Bison output files to be licensed under the GNU General Public
+ License without this special exception.
+ .
+ This special exception was added by the Free Software Foundation in
+ version 2.2 of Bison.
+ .
+ On Debian systems, the complete text of the GNU General Public
+ License Version 3 can be found in `/usr/share/common-licenses/GPL-3'.
+

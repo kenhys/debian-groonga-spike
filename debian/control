@@ -1,5 +1,5 @@
-# Note: There is a limitation for suported architectures.
-# When the build problem is fixed, we will change Architecture: to any.
+# Note: There is a limitation for supported architectures.
+# When the build problem is fixed, we may change Architecture: to any.
 Source: groonga
 Section: database
 Priority: optional
@@ -8,62 +8,67 @@ Uploaders: HAYASHI Kentaro <hayashi@clear-code.com>
 Build-Depends:
   debhelper (>= 9),
   autotools-dev,
+  pkg-config,
+  liblz4-dev,
   zlib1g-dev,
-  liblzo2-dev,
   libmsgpack-dev,
   libzmq3-dev | libzmq-dev,
   libevent-dev,
   libmecab-dev,
-  libpcre3-dev
-Standards-Version: 3.9.6
+  libpcre3-dev,
+  libstemmer-dev,
+  libjemalloc-dev
+Standards-Version: 3.9.5
 Homepage: http://groonga.org/
 
 Package: groonga
-Architecture: amd64 i386 kfreebsd-amd64 kfreebsd-i386 ppc64el
+Architecture: amd64 i386 kfreebsd-amd64 kfreebsd-i386 ppc64el armhf
 Depends:
   ${misc:Depends},
   ${shlibs:Depends},
   groonga-bin (= ${binary:Version}),
   groonga-plugin-suggest (= ${binary:Version}),
   groonga-doc (= ${source:Version})
-Description: Fulltext search engine (meta-package for library use)
+Description: Fulltext search engine (metapackage for library use)
  Groonga is an open-source fulltext search engine and column store.
  It lets you write high-performance applications that requires fulltext search.
  .
  This package depends all Groonga related package for library use.
 
 Package: groonga-server-common
-Architecture: any
+Architecture: all
 Depends:
   ${misc:Depends},
   ${shlibs:Depends},
   adduser,
   groonga (= ${binary:Version})
-Description: Fulltext search engine (meta-package for server use)
+Description: Fulltext search engine (metapackage for server use)
  Groonga is an open-source fulltext search engine and column store.
  It lets you write high-performance applications that requires fulltext search.
  .
  This package provides common settings for server use.
 
 Package: groonga-server-http
-Architecture: any
+Architecture: all
 Replaces: groonga-server (<< 2.0.7-1)
 Breaks: groonga-server (<< 2.0.7-1)
-Conflicts: groonga-httpd
+Section: oldlibs
+Priority: extra
 Depends:
   ${misc:Depends},
   ${shlibs:Depends},
   adduser,
   curl,
-  groonga-server-common (= ${binary:Version})
-Description: Fulltext search engine (meta-package for HTTP server use)
+  groonga-server-common (= ${binary:Version}),
+  groonga-httpd (>= 4.0.8-1)
+Description: Fulltext search engine (metapackage for HTTP server use)
  Groonga is an open-source fulltext search engine and column store.
  It lets you write high-performance applications that requires fulltext search.
  .
- This package depends all Groonga related package for HTTP server use.
+ This is a transitional package to groonga-httpd.
 
 Package: groonga-server-gqtp
-Architecture: any
+Architecture: all
 Replaces: groonga-server (<< 2.0.7-1)
 Breaks: groonga-server (<< 2.0.7-1)
 Depends:
@@ -71,7 +76,7 @@ Depends:
   ${shlibs:Depends},
   adduser,
   groonga-server-common (= ${binary:Version})
-Description: Fulltext search engine (meta-package for GQTP server use)
+Description: Fulltext search engine (metapackage for GQTP server use)
  Groonga is an open-source fulltext search engine and column store.
  It lets you write high-performance applications that requires fulltext search.
  .
@@ -79,7 +84,7 @@ Description: Fulltext search engine (meta-package for GQTP server use)
 
 Package: libgroonga-dev
 Section: libdevel
-Architecture: amd64 i386 kfreebsd-amd64 kfreebsd-i386 ppc64el
+Architecture: amd64 i386 kfreebsd-amd64 kfreebsd-i386 ppc64el armhf
 Multi-Arch: same
 Replaces: libgroonga (<< 1.2.0-1)
 Breaks: libgroonga (<< 1.2.0-1)
@@ -96,14 +101,17 @@ Description: Development files to use Groonga as a library
 
 Package: libgroonga0
 Section: libs
-Architecture: amd64 i386 kfreebsd-amd64 kfreebsd-i386 ppc64el
+Architecture: amd64 i386 kfreebsd-amd64 kfreebsd-i386 ppc64el armhf
 Multi-Arch: same
 Replaces: libgroonga (<< 1.2.0-1)
 Breaks: libgroonga (<< 1.2.0-1)
 Pre-Depends: ${misc:Pre-Depends}
 Depends:
   ${misc:Depends},
-  ${shlibs:Depends}
+  ${shlibs:Depends},
+  liblz4-1,
+  zlib1g,
+  libjemalloc1
 Description: Library files for Groonga
  Groonga is an open-source fulltext search engine and column store.
  It lets you write high-performance applications that requires fulltext search.
@@ -112,7 +120,7 @@ Description: Library files for Groonga
 
 Package: groonga-tokenizer-mecab
 Section: libs
-Architecture: amd64 i386 kfreebsd-amd64 kfreebsd-i386 ppc64el
+Architecture: amd64 i386 kfreebsd-amd64 kfreebsd-i386 ppc64el armhf
 Replaces: libgroonga-tokenizer-mecab (<< 1.2.0-1)
 Breaks: libgroonga-tokenizer-mecab (<< 1.2.0-1)
 Depends:
@@ -126,9 +134,25 @@ Description: MeCab tokenizer for Groonga
  .
  This package provides MeCab tokenizer.
 
+Package: groonga-token-filter-stem
+Section: libs
+Architecture: amd64 i386 kfreebsd-amd64 kfreebsd-i386 ppc64el armhf
+Depends:
+  ${misc:Depends},
+  ${shlibs:Depends},
+  libgroonga0 (= ${binary:Version}),
+  libstemmer0d
+Description: Stemming token filter for Groonga
+ Groonga is an open-source fulltext search engine and column store.
+ It lets you write high-performance applications that requires fulltext search.
+ .
+ This package provides TokenFilterStem token filter that stem each token.
+ The token filter uses libstemmer that uses stemming algorithm written
+ by Snowball.
+
 Package: groonga-plugin-suggest
 Section: libs
-Architecture: amd64 i386 kfreebsd-amd64 kfreebsd-i386 ppc64el
+Architecture: amd64 i386 kfreebsd-amd64 kfreebsd-i386 ppc64el armhf
 Replaces: libgroonga-plugin-suggest (<< 1.2.0-1)
 Breaks: libgroonga-plugin-suggest (<< 1.2.0-1)
 Depends:
@@ -142,7 +166,7 @@ Description: Suggest plugin for Groonga
  This package provides suggest plugin.
 
 Package: groonga-bin
-Architecture: amd64 i386 kfreebsd-amd64 kfreebsd-i386 ppc64el
+Architecture: amd64 i386 kfreebsd-amd64 kfreebsd-i386 ppc64el armhf
 Replaces: groonga (<< 1.2.0-1)
 Breaks: groonga (<< 1.2.0-1)
 Depends:
@@ -156,10 +180,10 @@ Description: Commands for Groonga
  This package provides 'groonga' command.
 
 Package: groonga-httpd
-Architecture: amd64 i386 kfreebsd-amd64 kfreebsd-i386 ppc64el
-Replaces: groonga (<< 1.2.0-1)
-Breaks: groonga (<< 1.2.0-1)
-Conflicts: groonga-server-http
+Architecture: amd64 i386 kfreebsd-amd64 kfreebsd-i386 ppc64el armhf
+Replaces: groonga (<< 1.2.0-1), groonga-server-http (<< 4.0.8-1)
+Breaks: groonga (<< 1.2.0-1), groonga-server-http (<< 4.0.8-1)
+Provides: groonga-server-http
 Depends:
   ${misc:Depends},
   ${shlibs:Depends},
@@ -199,7 +223,7 @@ Description: Examples of Groonga
 
 Package: groonga-munin-plugins
 Section: net
-Architecture: any
+Architecture: all
 Depends:
   ${misc:Depends},
   groonga-bin (= ${binary:Version}),

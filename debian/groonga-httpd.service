@@ -1,0 +1,17 @@
+[Unit]
+Description=Groonga HTTP Server
+Wants=network-online.target
+After=network-online.target
+Conflicts=groonga.service
+
+[Service]
+Type=forking
+User=root
+Group=root
+ExecStartPre=-/bin/mkdir -p /var/log/groonga/httpd
+ExecStartPre=-/bin/mkdir -p /var/run/groonga
+ExecStart=/usr/sbin/groonga-httpd
+ExecStop=/usr/sbin/groonga-httpd -s stop
+
+[Install]
+WantedBy=multi-user.target

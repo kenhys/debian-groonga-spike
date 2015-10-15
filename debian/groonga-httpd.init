@@ -42,9 +42,9 @@ DEFAULT_FILE=/etc/default/$NAME
 . /lib/lsb/init-functions
 
 if [ -z "$PID_FILE" ]; then
-  PID_FILE=$(grep '^\s*pid\s' /etc/nginx/nginx.conf | sed -re 's/^\s*pid\s+(.+);$/\1/g' | head -n1)
+  PID_FILE=$(grep '^\s*pid\s' /etc/groonga/httpd/groonga-httpd.conf | sed -re 's/^\s*pid\s+(.+);$/\1/g' | head -n1)
   if [ -z "$PID_FILE" ]; then
-    PID_FILE=/run/groonga-httpd.pid
+    PID_FILE=/var/run/groonga/groonga-httpd.pid
   fi
 fi
 
@@ -53,6 +53,10 @@ fi
 #
 do_start()
 {
+    pid_file_dir=$(dirname "$PID_FILE")
+    if [ ! -d "${pid_file_dir}" ]; then
+	mkdir -p "${pid_file_dir}"
+    fi
     # Return
     #   0 if daemon has been started
     #   1 if daemon was already running
