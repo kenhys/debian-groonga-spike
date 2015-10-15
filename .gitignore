@@ -3,3 +3,5 @@
 *.dsc
 *.build
 *.changes
+*.log
+groonga-*
