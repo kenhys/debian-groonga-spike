@@ -60,12 +60,6 @@ case $1 in
 	debuild -S -us -uc -nc
 	cd ..
 	;;
-    update)
-	DIST=sid sudo pbuilder --update
-	;;
-    upstream)
-	rsync -az --delete $UPSTREAM/ debian/
-	;;
     build)
 	$0 source
 	DSC=groonga_$VERSION-1.dsc
