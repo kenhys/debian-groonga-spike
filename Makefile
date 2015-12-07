@@ -8,5 +8,5 @@ master:
 upstream: master
 	rsync -az --delete groonga/packages/debian/ debian/
 
-update:
+update-image:
 	DIST=sid sudo pbuilder --update
