@@ -6,4 +6,4 @@ master:
 	fi
 
 upstream: master
-	rsync -az --delete $UPSTREAM/ debian/
+	rsync -az --delete groonga/packages/debian/ debian/
