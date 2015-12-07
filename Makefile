@@ -10,3 +10,6 @@ upstream: master
 
 update-image:
 	DIST=sid sudo pbuilder --update
+
+source:
+	./build.sh source
