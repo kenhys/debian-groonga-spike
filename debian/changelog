@@ -2,6 +2,8 @@ groonga (5.1.0-1) unstable; urgency=low
 
   * Team upload.
   * New upstream release.
+  * debian/source.lintian-overrides
+    - Suppress source-is-missing error.
 
  -- HAYASHI Kentaro <hayashi@clear-code.com>  Fri, 27 Nov 2015 22:37:17 +0900
 
