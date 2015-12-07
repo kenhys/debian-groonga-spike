@@ -13,3 +13,6 @@ update-image:
 
 source:
 	./build.sh source
+
+build:
+	./build.sh build
