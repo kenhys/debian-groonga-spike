@@ -14,5 +14,8 @@ update-image:
 source:
 	./build.sh source
 
-build:
+build: tmpfs
 	./build.sh build
+
+tmpfs:
+	./build.sh mount

@@ -32,6 +32,12 @@ TARGET=`find . -maxdepth 1 -type d -name 'groonga-*' | sort | tail -1`
 VERSION=`get_version $TARGET`
 echo $VERSION
 case $1 in
+    mount)
+	MOUNT_STATUS=`mount | grep /var/cache/pbuilder/build`
+	if [ -z "${MOUNT_STATUS}" ]; then \
+		sudo mount -t tmpfs -o size=3g tmpfs /var/cache/pbuilder/build
+	fi
+	;;
     init)
 	LATEST=`ls -1 *.gz | grep -v orig | tail -1`
 	VERSION=`get_version $LATEST`
