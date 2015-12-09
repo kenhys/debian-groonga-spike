@@ -1,0 +1,12 @@
+#! /bin/sh
+
+set -e
+
+if [ "$1" = "purge" ]; then
+    for target in /etc/groonga
+    do
+       dpkg-statoverride --remove $target
+    done
+fi
+
+#DEBHELPER#

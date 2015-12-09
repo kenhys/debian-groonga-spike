@@ -3,7 +3,7 @@
 set -e
 
 fixperms() {
-    for target in /etc/groonga/httpd /etc/groonga/httpd/logs /var/log/groonga/httpd /etc/groonga/httpd/scgi_temp /etc/groonga/httpd/proxy_temp /etc/groonga/httpd/uwsgi_temp /etc/groonga/httpd/fastcgi_temp /etc/groonga/httpd/client_body_temp /etc/groonga/httpd/html
+    for target in /etc/groonga
     do
         dpkg-statoverride --list $target >/dev/null || \
             dpkg-statoverride --update --add groonga groonga 0755 $target
