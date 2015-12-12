@@ -8,6 +8,8 @@ DATE=`date +'%Y%m%d-%H%M'`
 LOG=pbuilder-$DATE.log
 BASEPATH=/var/cache/pbuilder/unstable-amd64-base.tgz
 UPSTREAM=$HOME/work/groonga/groonga.clean/packages/debian
+BUILDDIR=/var/cache/pbuilder/build
+BUILDRESULTDIR=/var/cache/pbuilder/unstable-amd64/result
 
 function usage
 {
@@ -16,7 +18,7 @@ function usage
 
 function get_version()
 {
-    VERSION=`echo $1 | sed -e 's/tar.gz//' | sed -e s'/.\///' | sed -e 's/groonga-//'`
+    VERSION=`echo $1 | sed -e 's/.tar.gz//' | sed -e s'/.\///' | sed -e 's/groonga-//'`
     echo $VERSION
 }
 
@@ -72,6 +74,13 @@ case $1 in
 	if [ -f "$DSC" ]; then
 	    sudo DIST=sid pbuilder --build $DSC 2>&1 | tee $LOG
 	fi
+	;;
+    test)
+	sudo rm -f piuparts.log
+	LATEST=`ls -1 *.gz | grep -v orig | grep -v debian | tail -1`
+	VERSION=`get_version $LATEST`
+	echo $VERSION
+	sudo piuparts -d sid -t $BUILDDIR -m "http://ftp.jp.debian.org/debian main" -b $BASEPATH -l piuparts.log $BUILDRESULTDIR/*$VERSION*.changes
 	;;
     *)
 	usage
