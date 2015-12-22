@@ -6,7 +6,7 @@ master:
 	fi
 
 upstream: master
-	rsync -az --delete groonga/packages/debian/ debian/
+	rsync -az --delete --exclude=changelog groonga/packages/debian/ debian/
 
 update-image:
 	DIST=sid sudo pbuilder --update
