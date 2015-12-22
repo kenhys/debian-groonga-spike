@@ -85,6 +85,7 @@ case $1 in
 	;;
     copy-pkg)
 	cp -f $BUILDRESULTDIR/* $LOCALPOOLDIR/
+	find $LOCALPOOLDIR/ -name "*$VERSION*_amd64.deb"
 	;;
     *)
 	usage
