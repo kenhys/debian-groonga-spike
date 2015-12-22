@@ -5,7 +5,9 @@ set -e
 if [ "$1" = "purge" ]; then
     for target in /var/run/groonga /var/lib/groonga /var/log/groonga
     do
-	dpkg-statoverride --remove $target
+        if dpkg-statoverride --list $target >/dev/null; then
+            dpkg-statoverride --remove $target
+        fi
     done
 fi
 

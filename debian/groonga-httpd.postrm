@@ -5,7 +5,9 @@ set -e
 if [ "$1" = "purge" ]; then
     for target in /etc/groonga/httpd /etc/groonga/httpd/logs /var/log/groonga/httpd /etc/groonga/httpd/scgi_temp /etc/groonga/httpd/proxy_temp /etc/groonga/httpd/uwsgi_temp /etc/groonga/httpd/fastcgi_temp /etc/groonga/httpd/client_body_temp /etc/groonga/httpd/html
     do
-	dpkg-statoverride --remove $target
+        if dpkg-statoverride --list $target >/dev/null; then
+            dpkg-statoverride --remove $target
+        fi
     done
 fi
 
