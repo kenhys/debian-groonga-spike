@@ -81,7 +81,12 @@ case $1 in
 	LATEST=`ls -1 *.gz | grep -v orig | grep -v debian | tail -1`
 	VERSION=`get_version $LATEST`
 	echo $VERSION
-	sudo piuparts -d sid -t $BUILDDIR -m "http://ftp.jp.debian.org/debian main" -b $BASEPATH -l piuparts.log $BUILDRESULTDIR/*$VERSION*.changes
+	pkgs=$(cut -d' ' -f4 $BUILDRESULTDIR/*$VERSION*.changes | grep '\.deb$' | sort | uniq | grep -v dbgsym | grep -v munin)
+	for pkg in $pkgs; do
+	    DEBS="$PKGS $BUILDRESULTDIR/$pkg"
+	done
+	#sudo piuparts -d sid -t $BUILDDIR -m "http://ftp.jp.debian.org/debian main" -b $BASEPATH -l piuparts.log $BUILDRESULTDIR/*$VERSION*.changes
+	sudo piuparts -d sid -t $BUILDDIR -m "http://ftp.jp.debian.org/debian main" -b $BASEPATH -l piuparts.log $DEBS
 	;;
     copy-pkg)
 	cp -f $BUILDRESULTDIR/* $LOCALPOOLDIR/
