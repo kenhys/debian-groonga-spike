@@ -8,6 +8,9 @@ if [ "$1" = "purge" ]; then
         if dpkg-statoverride --list $target >/dev/null; then
             dpkg-statoverride --remove $target
         fi
+	if [ -d $target ]; then
+	    rm -fr $target
+	fi
     done
 fi
 
