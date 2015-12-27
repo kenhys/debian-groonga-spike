@@ -69,6 +69,13 @@ case $1 in
 	debuild -S -us -uc -nc
 	cd ..
 	;;
+    sign-source)
+	cd $TARGET
+	# -S source only,
+	# -nc non clean
+	debuild -S -nc
+	cd -
+	;;
     build)
 	$0 source
 	DSC=groonga_$VERSION-1.dsc
