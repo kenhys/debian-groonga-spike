@@ -92,6 +92,9 @@ case $1 in
 	cp -f $BUILDRESULTDIR/* $LOCALPOOLDIR/
 	find $LOCALPOOLDIR/ -name "*$VERSION*_amd64.deb"
 	;;
+    upstream-diff)
+	diff -uNr --exclude=changelog groonga/packages/debian debian
+	;;
     *)
 	usage
 	;;
