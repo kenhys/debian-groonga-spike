@@ -3,11 +3,13 @@ groonga (5.1.0-1) unstable; urgency=medium
   * Team upload.
   * New upstream release.
   * Import upstream debian/* changes.
-    - upstream distributes packages by themselves
+    - Closes: #799167, #800451
+  * Do not delete conffiles which are owned by other packages
+    - Closes: #773029
   * debian/source.lintian-overrides
     - Suppress source-is-missing error.
 
- -- HAYASHI Kentaro <hayashi@clear-code.com>  Fri, 27 Nov 2015 22:37:17 +0900
+ -- HAYASHI Kentaro <hayashi@clear-code.com>  Sun, 28 Dec 2015 00:00:00 +0900
 
 groonga (4.0.6.1-2) unstable; urgency=low
 
