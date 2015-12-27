@@ -8,6 +8,8 @@ groonga (5.1.0-1) unstable; urgency=medium
     - Closes: #773029
   * debian/source.lintian-overrides
     - Suppress source-is-missing error.
+  * debian/tests/*
+    - Add files for autopkgtest.
 
  -- HAYASHI Kentaro <hayashi@clear-code.com>  Sun, 28 Dec 2015 00:00:00 +0900
 

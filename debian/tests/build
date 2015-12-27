@@ -1,0 +1,22 @@
+#!/bin/sh
+
+set -e
+cat <<EOF > grntest.c
+#include <groonga.h>
+
+int main(void)
+{
+  grn_rc rc = grn_init();	
+  if (rc != GRN_SUCCESS) {
+    return -1;
+  }
+  grn_fin();
+  return 0;
+}
+EOF
+
+gcc -o grntest grntest.c `pkg-config --cflags --libs groonga`
+echo "build: OK"
+[ -x grntest ]
+./grntest
+echo "run: OK"

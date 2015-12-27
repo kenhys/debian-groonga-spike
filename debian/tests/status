@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -e
+
+set -e
+
+PKG_VERSION=`dpkg-query -W -f='${Version}' groonga`
+VERSION=`echo $PKG_VERSION | cut -d '-' -f1`
+FETCHED_VERSION=`curl --silent http://localhost:10041/d/status | jq --raw-output ".[1].version"`
+if [ "$VERSION" = "$FETCHED_VERSION" ]; then
+  echo "run: OK"
+fi
