@@ -15,7 +15,7 @@ source:
 	./build.sh source
 
 build: tmpfs
-	./build.sh build
+	./build.sh build && ./build.sh copy-pkg
 
 tmpfs:
 	./build.sh mount
