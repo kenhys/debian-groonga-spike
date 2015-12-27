@@ -6,7 +6,7 @@ cat <<EOF > grntest.c
 
 int main(void)
 {
-  grn_rc rc = grn_init();	
+  grn_rc rc = grn_init();
   if (rc != GRN_SUCCESS) {
     return -1;
   }
