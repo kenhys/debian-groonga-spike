@@ -2,8 +2,12 @@ groonga (5.1.1-1) unstable; urgency=medium
 
   * Team upload.
   * New upstream release.
+  * debian/copyright
+    - Fix I:unused-file-paragraph-in-dep5-copyright paragraph notifications.
+  * debian/rules
+    - Fix FTBFS on ppc64el due to outdated config.guess in vendor/onigmo-source.
 
- -- HAYASHI Kentaro <hayashi@clear-code.com>  Fri, 01 Jan 2016 20:06:31 +0900
+ -- HAYASHI Kentaro <hayashi@clear-code.com>  Sat, 02 Jan 2016 20:47:09 +0900
 
 groonga (5.1.0-1) unstable; urgency=medium
 
