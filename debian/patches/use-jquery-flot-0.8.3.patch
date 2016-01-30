@@ -5958,3 +5958,14 @@ Forwarded: Yes
  
  Permission is hereby granted, free of charge, to any person
  obtaining a copy of this software and associated documentation
+--- a/data/html/files.am
++++ b/data/html/files.am
+@@ -28,7 +28,7 @@
+ 	admin/js/groonga-admin.js \
+ 	admin/js/jquery-1.7.2.js \
+ 	admin/js/jquery-ui-1.8.18.custom.js \
+-	admin/js/jquery.flot-0.7.js \
++	admin/js/jquery.flot-0.8.3.js \
+ 	admin/js/jquery.flot.license.txt \
+ 	$(NULL)
+ 
