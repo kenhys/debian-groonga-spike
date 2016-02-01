@@ -1,2 +1,0 @@
-# lintian reports false positive:
-groonga source: source-is-missing data/html/admin/js/jquery.flot-0.7.js
