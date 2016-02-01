@@ -1,3 +1,14 @@
+groonga (5.1.2-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * patches/use-jquery-flot-0.8.3.patch
+    - Fix source-is-missing lintian error.
+  * debian/rules,debian/control
+    - Fix automake related FTBFS issue which is caused by added patch.
+
+ -- HAYASHI Kentaro <hayashi@clear-code.com>  Sat, 30 Jan 2016 21:48:00 +0900
+
 groonga (5.1.1-1) unstable; urgency=medium
 
   * Team upload.
