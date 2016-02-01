@@ -38,7 +38,7 @@ case $1 in
     mount)
 	MOUNT_STATUS=`mount | grep /var/cache/pbuilder/build`
 	if [ -z "${MOUNT_STATUS}" ]; then \
-		sudo mount -t tmpfs -o size=3g tmpfs /var/cache/pbuilder/build
+		sudo mount -t tmpfs -o size=4g tmpfs /var/cache/pbuilder/build
 	fi
 	;;
     init)
