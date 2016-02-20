@@ -10,7 +10,7 @@ install_packages() {
     # for ruby
     dd-schroot-cmd -c $SCHROOTID apt-get -y install libssl-dev libreadline-dev zlib1g-dev
     # for groonga
-    dd-schroot-cmd -c $SCHROOTID apt-get -y install liblz4-dev zlib1g-dev libmsgpack-dev libzmq3-dev libevent-dev libmecab-dev libpcre3-dev libstemmer-dev libjemalloc-dev
+    dd-schroot-cmd -c $SCHROOTID apt-get -y install liblz4-dev zlib1g-dev libmsgpack-dev libzmq3-dev libevent-dev libmecab-dev libpcre3-dev libstemmer-dev libjemalloc-dev bison
     dd-schroot-cmd -c $SCHROOTID apt-get -y install mecab-naist-jdic
 }
 
