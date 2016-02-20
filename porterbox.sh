@@ -6,7 +6,7 @@ install_packages() {
     dd-schroot-cmd -c $SCHROOTID apt-get update
     dd-schroot-cmd -c $SCHROOTID apt-get -y upgrade
     dd-schroot-cmd -c $SCHROOTID apt-get -y build-dep groonga
-    dd-schroot-cmd -c $SCHROOTID apt-get -y install procps packaging-dev git dh-autoreconf
+    dd-schroot-cmd -c $SCHROOTID apt-get -y install procps packaging-dev git dh-autoreconf ca-certificates
 }
 
 SCHROOTID=
