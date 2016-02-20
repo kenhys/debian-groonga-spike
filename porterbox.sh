@@ -17,6 +17,15 @@ case $1 in
 	SCHROOTID=wheezy$RANDOM
 	schroot -b -c wheezy -n $SCHROOTID
 	;;
+    ruby)
+	if [ $HOME = "/home/kenhys" ]; then
+	    exit 1
+	fi
+	git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+	git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+	echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+	echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+	;;
     *)
 	;;
 esac
