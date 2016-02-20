@@ -35,6 +35,9 @@ case $1 in
 	git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 	echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
 	echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+	echo 'gem: --no-rdoc --no-ri' > ~/.gemrc
+	source ~/.bashrc
+	gem install ffi ffi-yajl msgpack
 	;;
     *)
 	;;
