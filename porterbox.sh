@@ -6,7 +6,10 @@ install_packages() {
     dd-schroot-cmd -c $SCHROOTID apt-get update
     dd-schroot-cmd -c $SCHROOTID apt-get -y upgrade
     dd-schroot-cmd -c $SCHROOTID apt-get -y build-dep groonga
-    dd-schroot-cmd -c $SCHROOTID apt-get -y install procps packaging-dev git dh-autoreconf ca-certificates
+    dd-schroot-cmd -c $SCHROOTID apt-get -y install procps packaging-dev git dh-autoreconf ca-certificates libssl-dev libreadline-dev zlib1g-dev
+
+    dd-schroot-cmd -c $SCHROOTID apt-get -y install liblz4-dev zlib1g-dev libmsgpack-dev libzmq3-dev libevent-dev libmecab-dev libpcre3-dev libstemmer-dev libjemalloc-dev
+
 }
 
 SCHROOTID=
