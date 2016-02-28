@@ -8,7 +8,8 @@ groonga (6.0.0-1) unstable; urgency=medium
     - Update standards-version to 3.9.7
     - Add SSL/TLS dependency which is required by groonga-httpd.
   * patches/*
-    - Remove needless use-jquery-flot-0.8.3.patch because it is fixed in upstream.
+    - Remove needless use-jquery-flot-0.8.3.patch because it is fixed
+      in upstream.
 
  -- HAYASHI Kentaro <hayashi@clear-code.com>  Sun, 28 Feb 2016 12:34:17 +0900
 
