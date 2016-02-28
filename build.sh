@@ -68,6 +68,8 @@ case $1 in
 	# -nc non clean
 	debuild -S -us -uc -nc
 	cd ..
+	CHANGES=`find -name groonga_${VERSION}-*.changes | sort | head`
+	lintian -EviIL +pedantic $CHANGES
 	;;
     sign-source)
 	cd $TARGET
