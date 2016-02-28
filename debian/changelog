@@ -3,7 +3,8 @@ groonga (6.0.0-1) unstable; urgency=medium
   * Team upload.
   * New upstream release.
   * debian/control
-    - Fix undefined reference to `GRN_ATOMIC_ADD_EX' on mips,mipsel,m68k (Closes: #770243)
+    - Fix "undefined reference to `GRN_ATOMIC_ADD_EX'" on mips,mipsel,m68k.
+      Closes: #770243
     - Update standards-version to 3.9.7
     - Add SSL/TLS dependency which is required by groonga-httpd.
   * patches/*
