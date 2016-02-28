@@ -2,8 +2,10 @@ groonga (6.0.0-1) unstable; urgency=medium
 
   * Team upload.
   * New upstream release.
+  * debian/control
+    - Fix undefined reference to `GRN_ATOMIC_ADD_EX' on mips,mipsel,m68k (Closes: #770243)
 
- -- HAYASHI Kentaro <hayashi@clear-code.com>  Mon, 29 Feb 2016 00:00:00 +0900
+ -- HAYASHI Kentaro <hayashi@clear-code.com>  Sun, 28 Feb 2016 12:34:17 +0900
 
 groonga (5.1.2-1) unstable; urgency=medium
 
