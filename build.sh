@@ -29,7 +29,17 @@ function usage
 
 function get_version()
 {
-    VERSION=`echo $1 | sed -e 's/.tar.gz//' | sed -e s'/.\///' | sed -e 's/groonga-//'`
+    case $1 in
+	*orig.tar.gz)
+	    VERSION=`echo $1 | sed -e 's/.*_\(.*\)\.orig.*/\1/'`
+	    ;;
+	*tar.gz)
+	    VERSION=`echo $1 | sed -e 's/.*-\(.*\)\.tar.*/\1/'`
+	    ;;
+	*)
+	    VERSION=`echo $1 | sed -e 's/.*-\(.*\)/\1/'`
+	    ;;
+    esac
     echo $VERSION
 }
 
@@ -52,7 +62,7 @@ case $1 in
 	fi
 	;;
     init)
-	LATEST=`ls -1 *.gz | grep -v orig | tail -1`
+	LATEST=`ls -1 -v *.gz | tail -1`
 	VERSION=`get_version $LATEST`
 	TARGET=`echo $LATEST | sed -e 's/.tar.gz//'`
 	echo $VERSION
@@ -106,12 +116,13 @@ case $1 in
 	;;
     test)
 	sudo rm -f piuparts.log
-	LATEST=`ls -1 *.gz | sort | grep -v orig | grep -v debian | tail -1`
+	LATEST=`ls -1 -v *.gz | grep -v debian | tail -1`
 	VERSION=`get_version $LATEST`
 	echo $VERSION
 	pkgs=$(cut -d' ' -f4 $BUILDRESULTDIR/*$VERSION*.changes | grep '\.deb$' | sort | uniq | grep -v dbgsym | grep -v munin)
 	for pkg in $pkgs; do
-	    DEBS="$PKGS $BUILDRESULTDIR/$pkg"
+	    echo $pkg
+	    DEBS="$DEBS $BUILDRESULTDIR/$pkg"
 	done
 	#sudo piuparts -d sid -t $BUILDDIR -m "http://ftp.jp.debian.org/debian main" -b $BASEPATH -l piuparts.log $BUILDRESULTDIR/*$VERSION*.changes
 	sudo piuparts -d sid -t $BUILDDIR -m "http://ftp.jp.debian.org/debian main" -b $BASEPATH -l piuparts.log $DEBS
