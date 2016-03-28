@@ -1,3 +1,15 @@
+groonga (6.0.1-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * debian/control
+    - Use Architecture: any to support more architectures.
+  * debian/rules
+    - Remove needless DEB_BUILD_HARDENING flag.
+    - Disable static library.
+
+ -- HAYASHI Kentaro <hayashi@clear-code.com>  Mon, 28 Mar 2016 21:59:57 +0900
+
 groonga (6.0.0-1) unstable; urgency=medium
 
   * Team upload.
