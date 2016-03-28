@@ -12,6 +12,16 @@ BUILDDIR=/var/cache/pbuilder/build
 BUILDRESULTDIR=/var/cache/pbuilder/unstable-amd64/result
 LOCALPOOLDIR=$HOME/work/debian/groonga-armhf-repository/repositories/armhf/debian/pool/unstable/main/g/groonga
 
+run()
+{
+    echo "$@"
+    "$@"
+    if [ $? -ne 0 ]; then
+	echo "Failed to execute: $@"
+	exit 1
+    fi
+}
+
 function usage
 {
     echo "Usage: $0 [update]"
