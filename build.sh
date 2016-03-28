@@ -41,7 +41,7 @@ function mount_build_dir()
     fi
 }
 
-TARGET=`find . -maxdepth 1 -type d -name 'groonga-*' | sort | tail -1`
+TARGET=`find . -maxdepth 1 -type d -name 'groonga-*' | sort | head -1`
 VERSION=`get_version $TARGET`
 echo $VERSION
 case $1 in
