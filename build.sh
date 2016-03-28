@@ -90,14 +90,22 @@ case $1 in
 	;;
     build)
 	$0 source
+	if [ $? -ne 0 ]; then
+	    echo "Failed to source"
+	    exit 1
+	fi
 	DSC=groonga_$VERSION-1.dsc
 	if [ -f "$DSC" ]; then
 	    sudo DIST=sid pbuilder --build $DSC 2>&1 | tee $LOG
 	fi
 	;;
+    lint)
+	CHANGES=$BUILDRESULTDIR/*$VERSION*.changes
+	lintian -EviIL +pedantic $CHANGES > lintian-amd64.log
+	;;
     test)
 	sudo rm -f piuparts.log
-	LATEST=`ls -1 *.gz | grep -v orig | grep -v debian | tail -1`
+	LATEST=`ls -1 *.gz | sort | grep -v orig | grep -v debian | tail -1`
 	VERSION=`get_version $LATEST`
 	echo $VERSION
 	pkgs=$(cut -d' ' -f4 $BUILDRESULTDIR/*$VERSION*.changes | grep '\.deb$' | sort | uniq | grep -v dbgsym | grep -v munin)
