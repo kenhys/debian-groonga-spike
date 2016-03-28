@@ -76,7 +76,7 @@ case $1 in
 	# -us do not sign source package
 	# -uc do not sign .changes
 	# -nc non clean
-	debuild -S -us -uc -nc
+	run debuild -S -us -uc -nc
 	cd ..
 	CHANGES=`find -name groonga_${VERSION}-*.changes | sort | head`
 	lintian -EviIL +pedantic $CHANGES
