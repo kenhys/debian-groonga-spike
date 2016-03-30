@@ -4,9 +4,12 @@ groonga (6.0.1-1) unstable; urgency=medium
   * New upstream release.
   * debian/control
     - Use Architecture: any to support more architectures.
+    - Drop transitional groonga-server-http package.
   * debian/rules
     - Remove needless DEB_BUILD_HARDENING flag.
     - Disable static library.
+  * debian/groonga-httpd.default
+    - Set variables to enable fast phrase search feature.
 
  -- HAYASHI Kentaro <hayashi@clear-code.com>  Mon, 28 Mar 2016 21:59:57 +0900
 
