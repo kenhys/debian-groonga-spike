@@ -80,8 +80,8 @@ Copyright: 2002-2009 K.Kosako <sndgk393@ybb.ne.jp>
 License: BSD-2-clause
 
 Files: vendor/nginx-*/*
-Copyright: 2002-2014 Igor Sysoev
-           2011-2014 Nginx, Inc.
+Copyright: 2002-2016 Igor Sysoev
+           2011-2016 Nginx, Inc.
 License: BSD-2-clause
 
 Files: vendor/mruby-source/*
