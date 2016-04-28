@@ -18,7 +18,7 @@ Build-Depends:
   libstemmer-dev,
   libjemalloc-dev,
   libssl-dev
-Standards-Version: 3.9.7
+Standards-Version: 3.9.8
 Homepage: http://groonga.org/
 
 Package: groonga
