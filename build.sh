@@ -102,7 +102,6 @@ case $1 in
 	;;
     lint)
 	CHANGES=$BUILDRESULTDIR/*$VERSION*.changes
-	set -x
 	lintian -EviIL +pedantic $CHANGES > lintian-amd64.log
 	;;
     test)
