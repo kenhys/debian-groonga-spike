@@ -45,9 +45,9 @@ function mount_build_dir()
     fi
 }
 
-TARGET=`find . -maxdepth 1 -type d -name 'groonga-*' | sort | head -1`
-VERSION=`get_version $TARGET`
-echo $VERSION
+VERSION=$(cat version)
+RELEASE=$(cat release)
+TARGET="groonga-${VERSION}"
 case $1 in
     mount)
 	MOUNT_STATUS=`mount | grep /var/cache/pbuilder/build`
@@ -56,9 +56,6 @@ case $1 in
 	fi
 	;;
     init)
-	LATEST=`ls -1 -v *.gz | tail -1`
-	VERSION=`get_version $LATEST`
-	TARGET=`echo $LATEST | sed -e 's/.tar.gz//'`
 	echo $VERSION
 	if [ -d $TARGET ]; then
 	    rm -fr $TARGET
