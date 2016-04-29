@@ -29,17 +29,11 @@ function usage
 
 function get_version()
 {
-    case $1 in
-	*orig.tar.gz)
-	    VERSION=`echo $1 | sed -e 's/.*_\(.*\)\.orig.*/\1/'`
-	    ;;
-	*tar.gz)
-	    VERSION=`echo $1 | sed -e 's/.*-\(.*\)\.tar.*/\1/'`
-	    ;;
-	*)
-	    VERSION=`echo $1 | sed -e 's/.*-\(.*\)/\1/'`
-	    ;;
-    esac
+    if [ ! -f version ]; then
+	echo "ERROR: Failed to read version"
+	exit 1
+    fi
+    VERSION=$(cat version)
     echo $VERSION
 }
 
