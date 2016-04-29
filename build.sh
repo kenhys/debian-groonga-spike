@@ -5,7 +5,7 @@ if [ "$V" = 1 ]; then
 fi
 
 DATE=`date +'%Y%m%d-%H%M'`
-LOG=pbuilder-$DATE.log
+LOG=logs/pbuilder-$DATE.log
 BASEPATH=/var/cache/pbuilder/unstable-amd64-base.tgz
 UPSTREAM=$HOME/work/groonga/groonga.clean/packages/debian
 BUILDDIR=/var/cache/pbuilder/build
