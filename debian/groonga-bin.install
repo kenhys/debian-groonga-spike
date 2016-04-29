@@ -1,4 +1,5 @@
 usr/bin/groonga
 usr/bin/groonga-benchmark
+usr/bin/grndb
 usr/share/groonga/html/*
 etc/groonga/groonga.conf
