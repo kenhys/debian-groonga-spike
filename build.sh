@@ -103,6 +103,7 @@ case $1 in
     lint)
 	CHANGES=$BUILDRESULTDIR/*$VERSION*.changes
 	lintian -EviIL +pedantic $CHANGES > lintian-amd64.log
+	lintian -I $CHANGES | tee -a lintian-amd64.simple.log
 	;;
     test)
 	sudo rm -f piuparts.log
