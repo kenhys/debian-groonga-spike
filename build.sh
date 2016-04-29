@@ -95,7 +95,7 @@ case $1 in
 	    echo "Failed to source"
 	    exit 1
 	fi
-	DSC=groonga_$VERSION-1.dsc
+	DSC=groonga_${VERSION}-${RELEASE}.dsc
 	if [ -f "$DSC" ]; then
 	    sudo DIST=sid pbuilder --build $DSC 2>&1 | tee $LOG
 	fi
