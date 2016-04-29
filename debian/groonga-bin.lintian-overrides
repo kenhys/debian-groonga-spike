@@ -1,0 +1,3 @@
+groonga-bin: binary-without-manpage usr/bin/grndb
+groonga-bin: binary-without-manpage usr/bin/groonga
+groonga-bin: binary-without-manpage usr/bin/groonga-benchmark

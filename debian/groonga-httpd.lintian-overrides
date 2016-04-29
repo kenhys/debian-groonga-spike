@@ -1,0 +1,2 @@
+groonga-httpd: binary-without-manpage usr/sbin/groonga-httpd
+groonga-httpd: binary-without-manpage usr/sbin/groonga-httpd-restart

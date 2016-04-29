@@ -1,0 +1,3 @@
+groonga-plugin-suggest: binary-without-manpage usr/bin/groonga-suggest-create-dataset
+groonga-plugin-suggest: binary-without-manpage usr/bin/groonga-suggest-httpd
+groonga-plugin-suggest: binary-without-manpage usr/bin/groonga-suggest-learner
