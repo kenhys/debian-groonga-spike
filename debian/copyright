@@ -4,7 +4,7 @@ Upstream-Contact: Groonga Project <packages@groonga.org>
 Source: http://packages.groonga.org/source/groonga/
 
 Files: *
-Copyright: 2009-2013 Brazil, Inc.
+Copyright: 2009-2016 Brazil, Inc.
 License: LGPL-2.1
 
 Files: debian/*
@@ -43,35 +43,35 @@ Copyright: 2011, Brandon Aaron
 License: MIT or GPL-2
 
 Files: data/html/admin/js/jquery.flot*
-Copyright: 2007-2009 IOLA and Ole Laursen
+Copyright: 2007-2014 IOLA and Ole Laursen
 License: MIT
 
 Files: data/html/admin/js/jquery-1.7.2.js
 Copyright: 2011, John Resig
 License: MIT or GPL-2
 
-Files: doc/locale/*/jquery.js
-Copyright: 2012 jQuery Foundation
+Files: doc/locale/*/jquery*.js
+Copyright: 2005, 2014 jQuery Foundation, Inc. and other contributors
 License: MIT
 
-Files: doc/locale/*/underscore.js
+Files: doc/locale/*/underscore*.js
 Copyright: 2009-2012 Jeremy Ashkenas, DocumentCloud Inc.
 License: MIT
 
 Files: doc/locale/*/doctools.js
-Copyright: 2007-2014 the Sphinx team
+Copyright: 2007-2016 the Sphinx team
 License: BSD-2-clause
 
 Files: doc/locale/*/searchtools.js
-Copyright: 2007-2014 the Sphinx team
+Copyright: 2007-2016 the Sphinx team
 License: BSD-2-clause
 
 Files: doc/locale/*/websupport.js
-Copyright: 2007-2014 the Sphinx team
+Copyright: 2007-2016 the Sphinx team
 License: BSD-2-clause
 
 Files: doc/locale/*/basic.css doc/locale/*/pygments.css
-Copyright: 2007-2014 the Sphinx team
+Copyright: 2007-2016 the Sphinx team
 License: BSD-2-clause
 
 Files: vendor/onigmo-source/*
@@ -85,7 +85,7 @@ Copyright: 2002-2016 Igor Sysoev
 License: BSD-2-clause
 
 Files: vendor/mruby-source/*
-Copyright: 2014 mruby devevlopers
+Copyright: 2016 mruby devevlopers
 License: MIT
 
 Files: vendor/mruby/*
@@ -97,7 +97,7 @@ Copyright: 1984, 1989-1990, 2000-2013 Free Software Foundation, Inc.
 License: GPL-3+-WITH-BISON-EXCEPTION
 
 Files: vendor/mruby/mruby-onig-regexp/src/mruby_onig_regexp.c
-Copyright: 2014 mattn <mattn.jp@gmail.com>
+Copyright: 2015 mattn <mattn.jp@gmail.com>
 License: MIT
 
 Files: vendor/mruby/mruby-io/*
