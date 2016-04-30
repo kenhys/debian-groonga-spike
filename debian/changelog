@@ -1,3 +1,39 @@
+groonga (6.0.2-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * debian/control
+    - Update standards version to 3.9.8.
+    - Update compat level to 10.
+    - Drop needless dependency to dh-autoreconf.
+  * debian/upstream/signing-key.asc
+    - Add signing key to check signature.
+  * debian/watch
+    - Add pgpsigurlmangle to verify the archive.
+  * debian/groonga-bin.install
+    - Drop man files which are not provided anymore.
+    - Install missing grndb command.
+  * debian/groonga-httpd.service
+    - Make package description more clear.
+    - Use EnvironmentFile directive to customize.
+    - Drop unused Conflicts directive.
+  * debian/groonga-gqtp.service
+    - Make package description more clear.
+    - Use server mode which does not fork.
+  * debian/libgroonga0.install
+    - Install missing functions plugin.
+  * debian/copyright
+    - Update copyright year.
+  * debian/groonga-bin.lintian-overrides,
+    debian/groonga-httpd.lintian-overrides,
+    debian/groonga-plugin-suggest.lintian-overrides
+    - Suppress binary-without-manpage lintian warnings because
+      upstream dropped man support explicitly.
+  * debian/rule
+    - Remove bundled jquery and underscore correctly.
+
+ -- HAYASHI Kentaro <hayashi@clear-code.com>  Fri, 29 Apr 2016 00:51:25 +0900
+
 groonga (6.0.1-1) unstable; urgency=medium
 
   * Team upload.
