@@ -1,3 +1,17 @@
+groonga (6.0.4-1) unstable; urgency=medium
+
+  * New upstream release.
+  * debian/control
+    - Drop needless dependency to autotools-dev.
+  * debian/groonga-httpd.service,
+    debian/groonga-server-gqtp.service
+    - Add Documentation= entry to service unit.
+  * debian/groonga-httpd.default,
+    debian/groonga-server-gqtp.default
+    - Update default configuration in this release.
+
+ -- Kentaro Hayashi <hayashi@clear-code.com>  Tue, 07 Jun 2016 22:09:26 +0900
+
 groonga (6.0.2-1) unstable; urgency=medium
 
   * Team upload.
