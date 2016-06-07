@@ -5,7 +5,6 @@ Maintainer: Groonga Project <packages@groonga.org>
 Uploaders: HAYASHI Kentaro <hayashi@clear-code.com>
 Build-Depends:
   debhelper (>= 9.20160403),
-  autotools-dev,
   pkg-config,
   liblz4-dev,
   zlib1g-dev,
