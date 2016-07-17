@@ -89,7 +89,7 @@ Copyright: 2016 mruby devevlopers
 License: MIT
 
 Files: vendor/mruby/*
-Copyright: 2013-2014 Kouhei Sutou <kou@clear-code.com>
+Copyright: 2013-2016 Kouhei Sutou <kou@clear-code.com>
 License: LGPL-2.1
 
 Files: vendor/mruby/mruby-compiler/core/parse.c
