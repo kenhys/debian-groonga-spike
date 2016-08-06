@@ -79,8 +79,10 @@ case $1 in
 	# -nc non clean
 	run debuild -S -us -uc -nc
 	cd ..
-	CHANGES=`find -name groonga_${VERSION}-*.changes | sort | head`
-	lintian -EviIL +pedantic $CHANGES
+	CHANGES=`find . -name groonga_${VERSION}-${RELEASE}*.changes | sort | head`
+	if [ -f "$CHANGES" ]; then
+	    lintian -EviIL +pedantic $CHANGES > lintian-source.log
+	fi
 	;;
     sign-source)
 	cd $TARGET
