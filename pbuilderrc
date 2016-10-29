@@ -13,7 +13,7 @@ DEBIAN_SUITES=($UNSTABLE_CODENAME $TESTING_CODENAME $STABLE_CODENAME $STABLE_BAC
 UBUNTU_SUITES=("xenial" "wily" "vivid" "utopic" "trusty")
 
 # Mirrors to use. Update these to your preferred mirror.
-DEBIAN_MIRROR="ftp.us.debian.org"
+DEBIAN_MIRROR="ftp.jp.debian.org"
 UBUNTU_MIRROR="mirrors.kernel.org"
 
 # Optionally use the changelog of a package to determine the suite to use if
