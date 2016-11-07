@@ -2,6 +2,8 @@ groonga (6.1.0-2) unstable; urgency=medium
 
   * debian/patches/fix-nginx-FTBFS-on-kfreebsd.patch
     - Add patch to fix FTBFS on kFreeBSD.
+  * debian/copyright
+    - Add copyright about bundled ngx-mruby.
 
  -- Kentaro Hayashi <hayashi@clear-code.com>  Sun, 30 Oct 2016 07:31:31 +0900
 
@@ -10,8 +12,6 @@ groonga (6.1.0-1) unstable; urgency=medium
   * New upstream release.
   * debian/control
     - Add missing dependency to lsb-base because of init.d script.
-  * debian/copyright
-    - Add copyright about bundled ngx-mruby.
 
  -- Kentaro Hayashi <hayashi@clear-code.com>  Sat, 29 Oct 2016 13:50:37 +0900
 
