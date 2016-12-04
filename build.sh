@@ -10,7 +10,6 @@ BASEPATH=/var/cache/pbuilder/unstable-amd64-base.tgz
 UPSTREAM=$HOME/work/groonga/groonga.clean/packages/debian
 BUILDDIR=/var/cache/pbuilder/build
 BUILDRESULTDIR=/var/cache/pbuilder/unstable-amd64/result
-LOCALPOOLDIR=$HOME/work/debian/groonga-armhf-repository/repositories/armhf/debian/pool/unstable/main/g/groonga
 
 run()
 {
@@ -119,10 +118,6 @@ case $1 in
 	done
 	#sudo piuparts -d sid -t $BUILDDIR -m "http://ftp.jp.debian.org/debian main" -b $BASEPATH -l piuparts.log $BUILDRESULTDIR/*$VERSION*.changes
 	sudo piuparts -d sid -t $BUILDDIR -m "http://ftp.jp.debian.org/debian main" -b $BASEPATH -l piuparts.log $DEBS
-	;;
-    copy-pkg)
-	cp -f $BUILDRESULTDIR/* $LOCALPOOLDIR/
-	find $LOCALPOOLDIR/ -name "*$VERSION*_amd64.deb"
 	;;
     upstream-diff)
 	diff -uNr --exclude=changelog groonga/packages/debian debian
