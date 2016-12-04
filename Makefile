@@ -15,7 +15,7 @@ source:
 	./build.sh source
 
 build: tmpfs
-	./build.sh build 2>&1 | tee build-$$(date +'%Y%m%d').log && ./build.sh copy-pkg
+	./build.sh build 2>&1 | tee build-$$(date +'%Y%m%d').log
 
 tmpfs:
 	./build.sh mount
