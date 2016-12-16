@@ -121,7 +121,7 @@ Copyright: Nginx, Inc.
            Maxim Dounin
 License: BSD-2-clause
 
-Files: vendorFiles: vendor/nginx-*/src/core/ngx_proxy_protocol.c
+Files: vendor/nginx-*/src/core/ngx_proxy_protocol.c
  vendor/nginx-*/src/core/ngx_proxy_protocol.h
  vendor/nginx-*/src/http/modules/ngx_http_slice_filter_module.c
  vendor/nginx-*/src/http/modules/ngx_http_upstream_hash_module.c
