@@ -6,8 +6,9 @@ Forwarded: no
 Define _GNU_SOURCE not only on GNU/Hurd, but also other glibc-based
 platforms including GNU/kFreeBSD.
 
---- a/vendor/nginx-1.11.6/src/os/unix/ngx_posix_config.h
-+++ b/vendor/nginx-1.11.6/src/os/unix/ngx_posix_config.h
+See https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=826061#10
+--- a/vendor/nginx-1.11.8/src/os/unix/ngx_posix_config.h
++++ b/vendor/nginx-1.11.8/src/os/unix/ngx_posix_config.h
 @@ -21,10 +21,13 @@
  #endif
  
