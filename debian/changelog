@@ -1,6 +1,10 @@
 groonga (6.1.4-1) unstable; urgency=medium
 
   * New upstream release.
+  * debian/patches/fix-a-bug-that-AND-optimization-may-skip-matched-rec.patch
+    debian/patches/really-fix-a-bug-that-AND-optimization-may-skip-matc.patch
+    - Apply patches to fix an index search bug that index search may
+      not return records that should be matched.
 
  -- Kentaro Hayashi <hayashi@clear-code.com>  Thu, 19 Jan 2017 17:12:44 +0900
 
