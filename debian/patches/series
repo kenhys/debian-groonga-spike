@@ -1,1 +1,3 @@
 fix-nginx-FTBFS-on-kfreebsd.patch
+fix-a-bug-that-AND-optimization-may-skip-matched-rec.patch
+really-fix-a-bug-that-AND-optimization-may-skip-matc.patch

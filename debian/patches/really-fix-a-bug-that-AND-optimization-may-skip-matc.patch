@@ -1,0 +1,39 @@
+From 13ecba681ff4b48347654d44d53f5e19a80e6451 Mon Sep 17 00:00:00 2001
+From: Kouhei Sutou <kou@clear-code.com>
+Date: Fri, 20 Jan 2017 16:20:26 +0900
+Subject: [PATCH 2/3] Really fix a bug that AND optimization may skip matched
+ record
+
+minimum_min_id may be GRN_ID_NIL twice.
+
+Signed-off-by: Kentaro Hayashi <hayashi@clear-code.com>
+---
+ lib/expr.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/lib/expr.c b/lib/expr.c
+index fe6f3df3e..8cda4a6b3 100644
+--- a/lib/expr.c
++++ b/lib/expr.c
+@@ -6158,6 +6158,7 @@ grn_table_select_index_match(grn_ctx *ctx,
+   int n_indexes = GRN_BULK_VSIZE(&si->index)/sizeof(grn_obj *);
+   int32_t *wp = &GRN_INT32_VALUE(&si->wv);
+   grn_search_optarg optarg;
++  grn_bool minimum_min_id_is_set = GRN_FALSE;
+   grn_id minimum_min_id = GRN_ID_NIL;
+   unsigned int previous_n_hits = grn_table_size(ctx, res);
+ 
+@@ -6224,8 +6225,9 @@ grn_table_select_index_match(grn_ctx *ctx,
+       }
+     }
+     GRN_BULK_REWIND(&wv);
+-    if (minimum_min_id == GRN_ID_NIL ||
++    if (!minimum_min_id_is_set ||
+         optarg.match_info.min < minimum_min_id) {
++      minimum_min_id_is_set = GRN_TRUE;
+       minimum_min_id = optarg.match_info.min;
+     }
+   }
+-- 
+2.11.0
+
