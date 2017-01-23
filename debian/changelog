@@ -1,3 +1,12 @@
+groonga (6.1.5-1) unstable; urgency=medium
+
+  * New upstream release.
+  * debian/patches/fix-a-bug-that-AND-optimization-may-skip-matched-rec.patch
+    debian/patches/really-fix-a-bug-that-AND-optimization-may-skip-matc.patch
+    - Drop needless patch files. These changes are already merged in Groonga 6.1.5.
+
+ -- Kentaro Hayashi <hayashi@clear-code.com>  Mon, 23 Jan 2017 19:14:09 +0900
+
 groonga (6.1.4-1) unstable; urgency=medium
 
   * New upstream release.
