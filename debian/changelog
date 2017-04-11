@@ -1,4 +1,4 @@
-groonga (7.0.1-1) unstable; urgency=medium
+groonga (7.0.1-1) experimental; urgency=medium
 
   * New upstream release.
   * debian/patches/fix-nginx-FTBFS-on-kfreebsd.patch
