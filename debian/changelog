@@ -1,3 +1,11 @@
+groonga (7.0.2-1) experimental; urgency=medium
+
+  * New upstream release.
+  * debian/patches/fix-nginx-FTBFS-on-kfreebsd.patch
+    - Refresh patch to fix FTBFS on kFreeBSD.
+
+ -- Kentaro Hayashi <hayashi@clear-code.com>  Mon, 15 May 2017 15:56:38 +0900
+
 groonga (7.0.1-1) experimental; urgency=medium
 
   * New upstream release.
