@@ -74,6 +74,40 @@ Files: doc/locale/*/basic.css doc/locale/*/pygments.css
 Copyright: 2007-2016 the Sphinx team
 License: BSD-2-clause
 
+Files: benchmark/bench-cache.c
+Copyright: 2017 Kouhei Sutou <kou@clear-code.com>
+License: LGPL-2.1
+
+Files: benchmark/bench-between-sequential.c
+Copyright: 2016 Kouhei Sutou <kou@clear-code.com>
+License: LGPL-2.1
+
+Files: benchmark/bench-ctx-create.c
+Copyright: 2013-2016 Kouhei Sutou <kou@clear-code.com>
+License: LGPL-2.1
+
+Files: benchmark/bench-geo-distance.c
+Copyright: 2009-2016 Kouhei Sutou <kou@clear-code.com>
+License: LGPL-2.1
+
+Files: benchmark/bench-geo-select.c
+Copyright: 2011-2016 Kouhei Sutou <kou@clear-code.com>
+License: LGPL-2.1
+
+Files: benchmark/bench-nfkc.c
+ benchmark/bench-result-set.c
+Copyright: 2015-2016 Kouhei Sutou <kou@clear-code.com>
+License: LGPL-2.1
+
+Files: benchmark/bench-query-optimizer.c
+ benchmark/bench-range-select.c
+Copyright: 2014-2016 Kouhei Sutou <kou@clear-code.com>
+License: LGPL-2.1
+
+Files: benchmark/bench-table-factory.c
+Copyright: 2008-2016 Kouhei Sutou <kou@clear-code.com>
+License: LGPL-2.1
+
 Files: vendor/onigmo-source/*
 Copyright: 2002-2009 K.Kosako <sndgk393@ybb.ne.jp>
 	   2011-2014 K.Takata <kentkt@csc.jp>
