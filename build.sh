@@ -46,7 +46,8 @@ function mount_build_dir()
 
 VERSION=$(cat version)
 RELEASE=$(cat release)
-TARGET="groonga-${VERSION}"
+PACKAGE=$(cat package)
+TARGET="${PACKAGE}-${VERSION}"
 case $1 in
     mount)
 	MOUNT_STATUS=`mount | grep /var/cache/pbuilder/build`
@@ -63,11 +64,11 @@ case $1 in
 	rsync -az --delete debian $TARGET/
 	;;
     source)
-	if [ ! -f "groonga_$VERSION.orig.tar.gz" ]; then
-	    cp -p groonga-$VERSION.tar.gz groonga_$VERSION.orig.tar.gz
+	if [ ! -f "${PACKAGE}_$VERSION.orig.tar.gz" ]; then
+	    cp -p ${PACKAGE}-$VERSION.tar.gz groonga_$VERSION.orig.tar.gz
 	fi
 	if [ ! -d "$TARGET" ]; then
-	    echo "no groonga-VERSION directory"
+	    echo "no PACKAGE-VERSION directory"
 	    exit 1
 	fi
 	rsync -avz --delete debian $TARGET/
@@ -78,7 +79,7 @@ case $1 in
 	# -nc non clean
 	run debuild -S -us -uc -nc
 	cd ..
-	CHANGES=`find . -name groonga_${VERSION}-${RELEASE}*.changes | sort | head`
+	CHANGES=`find . -name ${PACKAGE}_${VERSION}-${RELEASE}*.changes | sort | head`
 	if [ -f "$CHANGES" ]; then
 	    lintian -EviIL +pedantic $CHANGES > lintian-source.log
 	fi
@@ -96,7 +97,7 @@ case $1 in
 	    echo "Failed to source"
 	    exit 1
 	fi
-	DSC=groonga_${VERSION}-${RELEASE}.dsc
+	DSC=${PACKAGE}_${VERSION}-${RELEASE}.dsc
 	if [ -f "$DSC" ]; then
 	    sudo DIST=sid pbuilder --build $DSC 2>&1 | tee $LOG
 	fi
