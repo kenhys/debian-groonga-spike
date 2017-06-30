@@ -17,7 +17,7 @@ Build-Depends:
   libjemalloc-dev,
   libssl-dev,
   libzstd-dev
-Standards-Version: 3.9.8
+Standards-Version: 4.0.0
 Homepage: http://groonga.org/
 
 Package: groonga
