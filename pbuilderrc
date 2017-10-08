@@ -1,29 +1,25 @@
 # Codenames for Debian suites according to their alias. Update these when
 # needed.
 UNSTABLE_CODENAME="sid"
-TESTING_CODENAME="stretch"
-STABLE_CODENAME="jessie"
+TESTING_CODENAME="buster"
+STABLE_CODENAME="stretch"
 STABLE_BACKPORTS_SUITE="$STABLE_CODENAME-backports"
 
 # List of Debian suites.
 DEBIAN_SUITES=($UNSTABLE_CODENAME $TESTING_CODENAME $STABLE_CODENAME $STABLE_BACKPORTS_SUITE
-    "unstable" "testing" "stable")
+    "experimental" "unstable" "testing" "stable")
 
 # List of Ubuntu suites. Update these when needed.
-UBUNTU_SUITES=("yakkety" "xenial" "wily" "vivid" "utopic" "trusty")
+UBUNTU_SUITES=("xenial" "wily" "vivid" "utopic" "trusty")
 
 # Mirrors to use. Update these to your preferred mirror.
-DEBIAN_MIRROR="ftp.jp.debian.org"
+DEBIAN_MIRROR="deb.debian.org"
 UBUNTU_MIRROR="mirrors.kernel.org"
 
 # Optionally use the changelog of a package to determine the suite to use if
 # none set.
 if [ -z "${DIST}" ] && [ -r "debian/changelog" ]; then
     DIST=$(dpkg-parsechangelog --show-field=Distribution)
-    # Use the unstable suite for Debian experimental packages.
-    if [ "${DIST}" == "experimental" ]; then
-        DIST="unstable"
-    fi
 fi
 
 # Optionally set a default distribution if none is used. Note that you can set
@@ -58,10 +54,6 @@ BUILDRESULT="/var/cache/pbuilder/$NAME/result/"
 APTCACHE="/var/cache/pbuilder/$NAME/aptcache/"
 BUILDPLACE="/var/cache/pbuilder/build/"
 
-# disable hardlink to use tmpfs
-# http://www.clear-code.com/blog/2015/1/15.html
-APTCACHEHARDLINK=no
-
 if $(echo ${DEBIAN_SUITES[@]} | grep -q $DIST); then
     # Debian configuration
     MIRRORSITE="http://$DEBIAN_MIRROR/debian/"
@@ -77,3 +69,7 @@ else
     echo "Unknown distribution: $DIST"
     exit 1
 fi
+
+# disable hardlink to use tmpfs
+# http://www.clear-code.com/blog/2015/1/15.html
+APTCACHEHARDLINK=no
