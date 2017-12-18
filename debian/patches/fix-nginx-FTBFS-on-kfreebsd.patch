@@ -1,7 +1,7 @@
 Date: Sat, 16 Jul 2016 23:52:50 +0100
 From: Steven Chamberlain <stevenc@debian.org>
 Subject: Use _GNU_SOURCE on GNU/kFreeBSD
-Forwarded: no
+Forwarded: https://trac.nginx.org/nginx/ticket/1028
 
 Define _GNU_SOURCE not only on GNU/Hurd, but also other glibc-based
 platforms including GNU/kFreeBSD.
