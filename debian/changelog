@@ -1,3 +1,11 @@
+groonga (7.1.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * debian/control
+    - Bump Standards-Version, no other changes are required.
+
+ -- Kentaro Hayashi <hayashi@clear-code.com>  Tue, 30 Jan 2018 17:59:15 +0900
+
 groonga (7.1.0-1) unstable; urgency=medium
 
   * New upstream release.
