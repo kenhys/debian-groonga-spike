@@ -1,2 +1,2 @@
 version=4
-opts=pgpsigurlmangle=s/$/.asc/ http://packages.groonga.org/source/groonga groonga-(.*)\.tar\.gz debian uupdate
+opts=pgpsigurlmangle=s/$/.asc/ https://packages.groonga.org/source/groonga groonga-(.*)\.tar\.gz debian uupdate
